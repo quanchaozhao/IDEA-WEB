@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        function get() {
+
+            var fso = new ActiveXObject("Scripting.FileSystemObject");
+
+            var s = fso.GetFolder("F:\\");
+            var fn = new Enumerator(s.files);
+            var s = "";
+            for (; !fn.atEnd();) {
+                s = s + fn.item() + "\n";
+            }
+            alert(s + "D")
+        }
+
+        function print() {
+            var object1 = document
+            var object2 = "";
+            for (var object3 in object1) {
+                object2 = object3 + "=" + object1[object3];
+                document.write(object2 + "<br>")
+            }
+        }
+    </script>
+</head>
+<body>
+<script language="JavaScript">
+    print()
+    arrayObject = new Array(3)
+    arrayObject[0] = "a";
+    arrayObject[1] = "DDDD";
+    arrayObject[0] = "1";
+    arrayObject.splice(0,1,"f")
+    document.write(arrayObject)
+</script>
+</body>
+</html>

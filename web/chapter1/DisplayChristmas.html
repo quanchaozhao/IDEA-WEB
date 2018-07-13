@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DisplayChristmas</title>
+    <script language="JavaScript">
+        function countdown(title, intime, divld) {
+            var online = new Date(intime);
+            var now = new Date();
+            var leave = online.getTime() - now.getTime();
+            var day = Math.floor(leave / (1000 * 60 * 60 * 24)) + 1;
+            day = Number(day)
+            if (day > 1) {
+                divld.innerHTML = "<b>---距" + title + "还有" + day + "天！</b>";
+                // document.write(Boolean(document.all));
+            } else {
+                if (day == 1)
+                    divld.innerHTML = "<b>---明天就是" + title + "啦！</b>";
+                else if (day == 0)
+                    divld.innerHTML = "<b>---今天是" + title + "呀！</b>";
+                else {
+                    divld.innerHTML = "<b>---哎呦！" + title + "已经过去了</b>"
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table width="350" height="450" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+        <td valign="bottom">
+            <table width="346" height="418" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="76"></td>
+                    <td width="270">
+                        <div id="countDown">
+                            <b>---</b>
+                        </div>
+                        <script language="javascript">
+                            countdown("元旦", "10/1/2018", countDown);
+                            <!--调用-->
+                        </script>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" type="text/javascript">
+        function call(event) {
+            alert("This is my first js file!");
+            if(event.keyCode == 8){
+                event.keyCode=0;
+                event.returnValue=false;
+                alert("base")
+            }
+            return
+        }
+
+        function maskingKeyboard(event) {
+            // alert(event + "ff")
+            // if(event.srcElement.className=="move_out"){
+            //     move_out = true;
+            //     z = event.srcElement;
+            //     temporarily1 = z.style.pixelLeft;
+            //     temporarily2 = z.style.pixelTop;
+            //     x = event.clientX;
+            //     y = event.clientY;
+            //     document.onmousemove=move;
+            // }else {
+            //     move_out = false;
+            // }
+
+
+        var x = event.clientX;
+            if (event.button == 2) {
+                event.returnValue = false;
+                event.button=0
+                alert("forbid");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body onmousedown="maskingKeyboard(event)" onkeypress="call(event)">
+<a href="javascript:call(event)">提交</a>
+<br>dsfdf
+<br>sadf
+<br>sdf  ffffffffffffffff             f
+<br>sdf                f
+<br>sdffffff          f
+</body>
+</html>

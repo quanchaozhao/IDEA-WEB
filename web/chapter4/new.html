@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>文字跟随鼠标</title>
+    <meta name="viewport" content="width=device-width"/>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="clickme1">点我DOM</div>
+<div id="clickme2">点我JQuery</div>
+<div id="hint" style="position: absolute;"></div>
+<script type="text/javascript">
+
+    //提示跟随鼠标移动而移动功能
+
+    // DOM
+    function WordsFollowMouseDOM(hintwords) {
+        document.addEventListener("mousemove", function (e) {
+            var myhint = document.getElementById("hint");
+            myhint.style.left = e.clientX + 8 + "px";
+            myhint.style.top = e.clientY + 2 + "px";
+            switch (hintwords) {
+                case 1:
+                    myhint.innerHTML = "我是文字跟随鼠标1。";
+                    myhint.style.display = 'block';
+                    break;
+                case 2:
+                    myhint.innerHTML = "我是文字跟随鼠标2。";
+                    myhint.style.display = 'block';
+                    break;
+                default:
+                    myhint.innerHTML = "";
+                    myhint.style.display = 'none';
+                    break;
+            }
+        });
+    }
+
+    // JQuery
+    function WordsFollowMouseJQuery(hintwords) {
+        document.addEventListener("mousemove", function (e) {
+            var myhint = $("#hint");
+            $(myhint).css({
+                "left": e.clientX + 8 + "px",
+                "top": e.clientY + 2 + "px"
+            });
+            switch (hintwords) {
+                case 1:
+                    $(myhint).text("我是文字跟随鼠标3。");
+                    $(myhint).css({"display":  "block"});
+                    break;
+                case 2:
+                    $(myhint).text("我是文字跟随鼠标4。");
+                    $(myhint).css({"display":  "block"});
+                    break;
+                default:
+                    $(myhint).text("");
+                    $(myhint).css({"display":  "none"});
+                    break;
+            }
+        });
+    }
+
+
+
+    $("#clickme1").click(function(){
+        WordsFollowMouseDOM(1);
+    });
+    $("#clickme2").click(function(){
+        WordsFollowMouseJQuery(1);
+    });
+</script>
+</body>
+</html>

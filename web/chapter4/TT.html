@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .move_out {
+            position: relative;
+            cursor: pointer;
+            font-family: "华文行楷"
+        }
+    </style>
+</head>
+<script type="text/javascript">
+    var drag = false;
+    var target, mousex, mousey, diffx, diffy;
+
+    function mouse_down(e) {
+        e = e || window.event;
+        mousex = e.pageX || e.clientX;
+        mousey = e.pageY || e.clientY;
+        var t = e.target || e.srcElement;
+
+        if (t.className === "move_out") {
+            diffx = mousex - t.offsetLeft;
+            diffy = mousey - t.offsetTop;
+            target = t;
+            target.style.position = "absolute";
+            drag = true;
+        }
+    }
+
+    function mouse_move(e) {
+        e = e || window.event;
+        mousex = e.pageX || e.clientX;
+        mousey = e.pageY || e.clientY;
+        if (drag) {
+            target.style.left = mousex - diffx + "px";
+            target.style.top = mousey - diffy + "px";
+        }
+    }
+
+    document.onmouseup = function () {
+        drag = false;
+    };
+    document.onmousedown = mouse_down;
+    document.onmousemove = mouse_move;
+</script>
+<body>
+<font color=0000ff size=10 class="move_out">随鼠标移动</font>
+</body>
+</html>

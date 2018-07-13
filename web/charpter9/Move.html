@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>文本框获得焦点时改变背景颜色</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script language="javascript">
+        <!--
+        function txtfocus(event,obj){
+            // alert(event)
+
+            var obj = event.target
+            obj.style.background="#ffa36a";
+        }
+        function txtblur(event,obj){
+            // alert(event)
+
+            var obj = event.target
+            obj.style.background="white";
+            alert("recover");
+        }
+        //-->
+    </script>
+</head>
+
+<body>
+<table align="center" width="337" height="204" border="0">
+    <tr>
+        <td width="108">用户名:</td>
+        <td width="213"><form name="form1" method="post" action="">
+            <input type="text" name="textfield" onfocus="txtfocus(event,this)" onBlur="txtblur(event,this)">
+        </form></td>
+    </tr>
+    <tr>
+        <td>密码:</td>
+        <td><form name="form2" method="post" action="">
+            <input type="text" name="textfield2" onfocus="txtfocus(event,this)" onBlur="txtblur(event,this)">
+        </form></td>
+    </tr>
+    <tr>
+        <td>真实姓名:</td>
+        <td><form name="form3" method="post" action="">
+            <input type="text" name="textfield3" onfocus="txtfocus(event,this)" onBlur="txtblur(event,this)">
+        </form></td>
+    </tr>
+    <tr>
+        <td>性别:</td>
+        <td><form name="form4" method="post" action="">
+            <input type="text" name="textfield5" onfocus="txtblur(event,this)" onBlur="txtblur(event,this)">
+        </form></td>
+    </tr>
+    <tr>
+        <td>邮箱:</td>
+        <td><form name="form5" method="post" action="">
+            <input type="text" name="textfield4" onfocus="txtfocus(event,this)" onBlur="txtblur(event,this)">
+        </form></td>
+    </tr>
+</table>
+
+</body>
+</html>
